@@ -1,0 +1,651 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+    text-decoration: none; 
+    border: none; 
+    outline: none; 
+    scroll-behavior: smooth; 
+    font-family: 'Poppins' , sans-serif;
+    user-select: none;
+
+
+}
+:root{
+   --bg-color:#f4fbf9;
+   --second-bg-color:#bcc9c7;
+   --second2-bg-color:#004f64;
+   --text-color:#000000;
+   --btn-color:#559692;
+   --btnHover-color:#53e8de;
+   --error-text: rgb(160, 13, 0);
+}
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+body{
+  
+  background-color: var(--bg-color);
+   color: var(--bg-color);
+
+}
+p{
+  font-family: "Montserrat", sans-serif;
+
+}
+h1{
+  font-family: "Montserrat", sans-serif;
+
+}
+section{
+   min-height: 100vh;
+   padding: 10rem 9% 2rem;
+}
+ 
+
+/*.header.sticky{
+   border-bottom: .1rem solid #00000000;
+}
+*/
+
+
+/*---------------------------------------------watingDiv.---------------------------------------------*/
+.watingDiv{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top:0;
+    opacity: 1;
+    background-color: var(--second2-bg-color);
+    transition: 1s ease;
+}
+.logoBg{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+     
+}
+.caeee_logo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    width: 0px;
+    height: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(0deg); /* Rotation initiale sur l'axe Y */
+    transform-origin: center;
+    animation: none;
+    border-radius: 0;
+    transition: 0.5s ease;
+}
+
+
+.imagelogo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    opacity: 0;
+    transition: 0.6s ease;
+    top: 0;
+    
+}
+.imagelogo img{
+    width: 70%;
+    height: 70%;
+
+}
+.textLogo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    opacity: 0;
+    top: 80%;
+    transition: 1s ease;
+}
+
+.textLogo h1{
+    font-size: 1.8rem;
+    color: var(--bg-color);
+}
+
+
+
+.bg_choix_user{
+    width: 50vw;
+    height: 50vh;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-around;
+    align-items: center;
+    transition: 1s ease;
+}
+.bgmedcinpatient{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    background-color: var(--second2-bg-color);
+    border-radius: 10px;
+    border: 3px solid var(--bg-color);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.bgmedcinpatient {
+    text-align: justify; /* Justifier le contenu horizontalement */
+    color: var(--bg-color);
+}
+
+.bgmedcinpatient h1,
+.bgmedcinpatient p {
+    margin: 0 auto; /* Centre les éléments horizontalement */
+    max-width: 80%; /* Limite la largeur pour éviter un texte trop étiré */
+    cursor: pointer;
+}
+
+.bgmedcinpatient:hover{
+    border: 3px solid var(--second2-bg-color);
+    color: #53e8de;
+}
+
+.img_bgmedcinpatient{
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.img_bgmedcinpatient i{
+    font-size: 3rem;
+    color: var(--second2-bg-color);
+}
+
+
+.img_bgmedcinpatient img{
+  width: 40px;
+}
+
+/*---------------------------------------------loginregister Mecdcins.---------------------------------------------*/
+
+
+.bg_login_register{
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+}
+.contet_bg{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+.image_L_R{
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  color: var(--second2-bg-color);
+  padding: 40px;
+}
+.image_L_R img{
+  width: 100px;
+}
+.image_L_R h1{
+ font-size: 5rem;
+ font-weight: 700;
+ font-style: normal;
+}
+.image_L_R p{
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: normal;
+}
+.content_L_R{
+  width: 50%;
+  min-height: 100vh;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: var(--second2-bg-color);
+  flex-direction: column;
+  border-radius: 10px;
+}
+.logo_ferti{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.logo_ferti_rond{
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+}
+.logo_ferti_rond img{
+  width: 35px;
+}
+.con_content_L_R{
+  width: 100%;
+  padding: 10px;
+}
+.conncxion_inputs{
+  width: 100%;
+}
+.input_styl{
+  width: 80%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+label{
+  padding-bottom: 5px;
+}
+input{
+  padding: 7px; 
+  border: 1px solid var(--bg-color);
+  border-radius: 5px; 
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--bg-color);
+}
+input:focus {
+  outline: none; 
+  border-color: var(--btnHover-color);
+  box-shadow: 0 0 5px var(--btnHover-color); 
+}
+.conncxion_inputs a{
+  color: var(--bg-color);
+  transition: 0.3s ease;
+  text-decoration: underline;
+}
+.conncxion_inputs a:hover{
+  color: var(--btnHover-color);
+
+}
+
+.img_login{
+  width: 100%;
+  display: flex;
+}
+.img_login img{
+  width: 200px;
+  height: 200px;
+
+}
+  /*-----------------------------------------------------btn*/
+
+  .btnVide{
+    display: block; 
+    width: 150px; 
+    padding: 10px; 
+    color: var(--second2-bg-color); 
+    background-color: transparent;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s; 
+    border: 1px solid var(--second2-bg-color);
+  }
+  .btnVide:hover {
+    background-color:var(--second2-bg-color) ;
+    color: var(--bg-color); 
+
+  }
+  .btn {
+    display: block; 
+    width: 150px; 
+    padding: 10px; 
+    background-color: var(--btn-color); 
+    color: var(--bg-color); 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s; 
+  }
+  
+  .btn:hover {
+    background-color:var(--btnHover-color); 
+    color: var(--second2-bg-color); 
+
+  }
+
+  .btn.souvgarder{
+    display: block; 
+    width: 150px; 
+    padding: 10px; 
+    background-color: rgb(0, 96, 0); 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition:  0.3s; 
+
+  }
+  .btn.souvgarder:hover {
+    background-color:rgb(0, 45, 0); 
+  }
+
+  .btn.modifier{
+    display: block; 
+    width: 150px; 
+    padding: 10px; 
+    background-color: rgb(255, 158, 1); 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s; 
+  }
+  .btn.modifier:hover {
+    background-color:rgb(135, 83, 0); 
+  }
+
+
+  .btn.supprimer{
+    display: block; 
+    width: 150px; 
+    padding: 10px; 
+    background-color: rgb(255, 1, 1); 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition:  0.3s; 
+  }
+  .btn.supprimer:hover {
+    background-color:rgb(135, 0, 0); 
+  }
+  /*-----------------------------------------------------btn*/
+
+
+
+
+  /*-----------------------------------------------------loader*/
+
+
+
+       
+  .cs-loader-inner {
+    position: relative;
+    width: 100%;
+    color: var(--main-color);
+    padding: 0;
+    text-align: center;
+  }
+  
+  .cs-loader-inner label {
+    font-size: 13px;
+    opacity: 0;
+    display:inline-block;
+  }
+  
+  @keyframes lol {
+    0% {
+      opacity: 0;
+      transform: translateX(-65px);
+    }
+    33% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+    66% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(65px);
+    }
+  }
+  
+  @-webkit-keyframes lol {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(-100px);
+    }
+    33% {
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+    }
+    66% {
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateX(100px);
+    }
+  }
+  
+  .cs-loader-inner label:nth-child(6) {
+    -webkit-animation: lol 1.5s infinite ease-in-out;
+    animation: lol 1.5s infinite ease-in-out;
+  }
+  
+  .cs-loader-inner label:nth-child(5) {
+    -webkit-animation: lol 1.5s 100ms infinite ease-in-out;
+    animation: lol 1.5s 100ms infinite ease-in-out;
+  }
+  
+  .cs-loader-inner label:nth-child(4) {
+    -webkit-animation: lol 1.5s 200ms infinite ease-in-out;
+    animation: lol 1.5s 200ms infinite ease-in-out;
+  }
+  
+  .cs-loader-inner label:nth-child(3) {
+    -webkit-animation: lol 1.5s 300ms infinite ease-in-out;
+    animation: lol 1.5s 300ms infinite ease-in-out;
+  }
+  
+  .cs-loader-inner label:nth-child(2) {
+    -webkit-animation: lol 1.5s 400ms infinite ease-in-out;
+    animation: lol 1.5s 400ms infinite ease-in-out;
+  }
+  
+  .cs-loader-inner label:nth-child(1) {
+    -webkit-animation: lol 1.5s 500ms infinite ease-in-out;
+    animation: lol 1.5s 500ms infinite ease-in-out;
+  } 
+
+
+
+  /*-----------------------------------------------------loader*/
+
+  
+  .wating{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #004e64aa;
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .wating_img{
+    width:60px;
+    height: 60px;
+    display: flex;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+  .wating_img img{
+    width:50px;
+    height: 50px;
+    display: inline-block;
+    animation: rotation 2s linear infinite; /* Changez la durée (2s) selon vos préférences */
+
+  }
+
+
+
+  @keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+  
+
+
+
+
+
+
+@media (max-width:617px){
+    .bg_choix_user{
+        width: 100vw;
+        height: 50vh;
+        background-color: var(--bg-color);
+        position: absolute;
+        top: 100vh;
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        justify-content: start;
+        align-items: center;
+
+    }
+    .bgmedcinpatient{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        flex-direction: column;
+        background-color: var(--second2-bg-color);
+        border-radius: 7px;
+        margin-bottom: 10px;
+    }
+    .bg_login_register{
+      padding: 0;
+    }
+    .content_L_R{
+      width: 100%;
+    }
+    .contet_bg{
+      flex-direction: column;
+      padding: 0;
+
+    }
+
+    .image_L_R{
+      width: 100%;
+    }
+    .image_L_R{
+      width: 100%;
+    }
+    .image_L_R h1{
+      font-size: 3rem;
+    } 
+    .image_L_R p{
+    font-size: 1.8rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
